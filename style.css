@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
+    background-size: 200% 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 13px;
+    color: hsl(238, 29%, 16%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1000px;
+    background: white url("images/bg-pattern-desktop.svg") no-repeat left;
+    background-size: 50%;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#header {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.qcm {
+    width: 40%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.qcm h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+
+#validate {
+    text-align: center;
+}
+
+input {
+    margin: 1%;
+    margin-right: 3%;
+}
+
+#validate > input {
+    font-size: 13px;
+    color: white;
+    width: 100px;
+    height: 50px;
+    margin-top: 2%;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
+}
+
+.question::before {
+    content: url("icon-arrow-down.svg");
+    float: right;
+    position: center;
+    padding-right: 20px;
+}
+
+details[open] .question::before {
+    content: url("icon-arrow-down.svg");
+    transform: translate(-65%) rotate(180deg);
+}
+
+.faq .question {
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    list-style: none;
+}
+
+.faq .question:hover {
+    color: hsl(14, 88%, 65%);
+    font-weight: 700;
+}
+
+.faq .answer {
+    color: hsl(240, 6%, 50%);
+}
+
+.all_faqs {
+    width: 350px;
+    height: 300px;
+    overflow: scroll;
+}
+
+.all_faqs::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+
+#validate > input:hover {
+    cursor: pointer;
+}
+
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-340%, -20%);
+    animation-name: box_animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.box img {
+    height: 170px;
+    width: 170px;
+}
+
+@keyframes box_animation {
+    0% { transform: translate(-340%, -20%)}
+    50% { transform: translate(-340%, -40%) }
+    100% { transform: translate(-340%, -20%) }
+}
+
+
+
+.desktop {
+    width: 500px;
+    overflow: hidden;
+    text-align: right;
+    transform: translate(-10%);
+}
+
+.desktop img {
+    transform: translate(-20%);
+    animation-name: desktop_animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes desktop_animation {
+    0% { transform: translate(-20%) }
+    50% { transform: translate( 0%) }
+    100% { transform: translate(-20%) }
+}
+
+hr {
+    border: 1px solid hsl(240, 5%, 91%);
+    border-radius: 10px;
+}
+
+
+
+
+@media (max-width: 1110px) {
+    main {
+        flex-direction: column;
+        padding: 0 30px;
+        width: 375px;
+        background: white url("images/bg-pattern-mobile.svg") no-repeat top;
+        background-size: 100%;
+    }
+    .qcm {
+        width: 100%;
+        margin-top: -5%;
+    }
+}
+
+
+@media (max-width: 450px) {
+    main {
+        width: 325px;
+        height: 570px;
+    }
+    .qcm {
+        margin-top: 0%;
+    }
+}
+
+
+@media (max-width: 1110px) {
+    .box img {
+        height: 120px;
+        width: 120px;
+        transform: translate(180%, -235%);
+    }
+}
+
+@media (max-width: 1110px) {
+    .desktop {
+        text-align: center;
+        transform: translate(0%, -10%);
+        overflow: visible;
+    }
+
+    .desktop img {
+        width: 400px;
+        height: 250px;
+        animation-name: desktop_animation_mobile;
+    }
+
+    @keyframes desktop_animation_mobile {
+        0% { transform: translate(0%,-10%) }
+        50% { transform: translate(0%) }
+        100% { transform: translate(0%,-10%) }
+    }
+}
+
